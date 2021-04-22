@@ -4,7 +4,7 @@
   width: 100wh;
   justify-content: space-between;
   margin-top: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 17px;
 }
 #divp1{
    display: grid;
@@ -15,6 +15,16 @@
   @media screen and (max-width: 60em) {
     grid-template-rows: repeat(4, 1fr);
   }
+}
+#divab{
+  display: flex;
+  margin: auto;
+}
+#divab2{
+  display: block;
+  border-top: solid blueviolet;
+  height: 57vh;
+  background-color: rgba(0, 0, 0, 0.267);
 }
 
 li {
@@ -27,7 +37,7 @@ li a {
   display: block;
   font-size: 18px;
   font-weight: bold;
-  color: rgb(36, 98, 212);
+  color: rgb(33, 96, 212);
   margin-right: 20px;
   text-decoration: none;
 }
@@ -64,4 +74,22 @@ li a {
     width: 40px;
     height: 40px;
     
+}
+#sec1{
+  margin-bottom: 100px;
+}
+#h2ab{
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Times New Roman', Times, serif;
+  color: blue;
+  font-size: 35px;
+  padding-left: 9px;
+  
+}
+
+#pab{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  padding-left: 14px;
 }
