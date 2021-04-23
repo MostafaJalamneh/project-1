@@ -17,3 +17,5 @@ const reg = document.querySelector('.Religious')
 reg.addEventListener('click', () => {
     window.open('quiz.html', '_blank');
 })
+
+

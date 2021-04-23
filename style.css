@@ -1,3 +1,10 @@
+
+.b2 {
+  background-image: url(./biege.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #divn {
   display: flex;
   background-color: #333;
@@ -6,8 +13,8 @@
   margin-top: 10px;
   margin-bottom: 17px;
 }
-#divp1{
-   display: grid;
+#divp1 {
+  display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
   width: 100vw;
@@ -16,15 +23,29 @@
     grid-template-rows: repeat(4, 1fr);
   }
 }
-#divab{
+#but1{
+background-color:rgb(110, 105, 105);
+}
+#but2{
+  background-color:rgb(110, 105, 105);
+  }
+#divab {
   display: flex;
   margin: auto;
 }
-#divab2{
+#divab2 {
   display: block;
   border-top: solid blueviolet;
   height: 57vh;
   background-color: rgba(0, 0, 0, 0.267);
+}
+#divqu{
+  display: flex;
+  justify-content:space-around;
+}
+#divans{
+  display: grid;
+  justify-content: space-between;
 }
 
 li {
@@ -47,49 +68,55 @@ li a {
   margin-left: 20px;
 }
 
-.marr{
-    margin-right: 15px;
+.marr {
+  margin-right: 15px;
 }
-.marb{
-    margin-bottom: 30px;
+.marb {
+  margin-bottom: 30px;
 }
-.marl{
-    margin-left: 40px;
+.marl {
+  margin-left: 40px;
 }
-.marr1{
-    margin-right: 40px;
+.marr1 {
+  margin-right: 40px;
 }
-.h1s{
-    font-size: xx-large;
-    display: flex;
-    position: relative;
-    top: 95px;
-    justify-content:center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+.h1s {
+  font-size: xx-large;
+  display: flex;
+  position: relative;
+  top: 95px;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
 }
-.pic{
-    display: flex;
-    margin: auto;
-    width: 40px;
-    height: 40px;
-    
+.pic {
+  display: flex;
+  margin: auto;
+  width: 40px;
+  height: 40px;
 }
-#sec1{
+.cur {
+  cursor: pointer;
+}
+#sec1 {
   margin-bottom: 100px;
 }
-#h2ab{
+#h2ab {
   display: flex;
   justify-content: flex-start;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   color: blue;
   font-size: 35px;
   padding-left: 9px;
-  
+}
+#h2q{
+  display: flex;
+  margin-bottom: 4px;
+  border-radius: 18px 5px;
 }
 
-#pab{
-  font-family: 'Times New Roman', Times, serif;
+#pab {
+  font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   padding-left: 14px;
 }
