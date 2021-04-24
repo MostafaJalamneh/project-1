@@ -18,4 +18,3 @@ reg.addEventListener('click', () => {
     window.open('quiz.html', '_blank');
 })
 
-
