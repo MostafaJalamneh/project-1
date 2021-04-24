@@ -2,16 +2,23 @@ const btn = document.querySelector('#but2')
 btn.addEventListener('click', () => {
     window.open('main.html', '_blank');
 })
+let enable = true
 const btn1 = document.querySelector('#but1')
-btn1.addEventListener('click', () => {
-    question()
-})
+if (enable === true) {
+    btn1.addEventListener('click', () => {
+        if (enable === true) {
+            cor.innerText = ''
+            question()
+        }
+    })
+}
 
-let an;
-let ry
+let x = localStorage.getItem("type");
+let mark = 0;
+let at = []
+let ss, an, ry, s;
 let hh = 0;
 let a = 4;
-let s;
 let count = 1;
 const body = document.querySelector('.b2');
 const he = document.querySelector("#h2q")
@@ -21,66 +28,126 @@ const ans3 = document.querySelector(".ans3")
 const ans4 = document.querySelector(".ans4")
 const but1 = document.querySelector("#but1")
 const but2 = document.querySelector("#but2")
+const cor = document.querySelector(".cor")
+const marks = document.querySelector(".mark")
+
+
+
 let arr = [ans1, ans2, ans3, ans4]
 
-const qu = [{ 'what is your name ?': 'abc' }, { 'what is fav color ?': 'red' }
-, { 'what is food ?': 'pizaa' }, { 'where are u from ?': 'amman' }, { 'hi ?': 'bye' }]
+const qsport = [{ 'The most team won the World Cup ?': 'Brazil' }, { 'The club that achieves the most European Champions League ?': 'Real Madrid' }
+    , { 'The organizing country for the 2014 World Cup ?': 'Brazil' }, { 'Who is the historical goalscorer for the World Cup ?': 'Klose' }, { 'The best player of all time ?': 'Benzema' }]
+let ars = ['Italy', 'Spain', 'Jordan', 'Japan', 'Milan', 'Bayern munich', 'Barcelona', 'Arsenal', 'south Africa', 'Russia', 'Qatar', 'canada', 'Ronaldo', 'messi', 'Maradona', 'Sameer',
+    'cristiano', 'messi', 'bele', 'under taker']
 
-const question = () => {
+const qscien = [{ 'What is the name of the device that is used to measure the atmospheric pressure ?': 'Barometer' }, { 'Who is the scientist who invented the telescope ?': 'Galileo' }
+    , { 'Who is the scientist who invented the calculator ?': 'Blaze pixel' }, { 'Who is the scientist who invented the medical glasses ?': 'Al-Hasan bin Al-Haytham' }, { 'From the world who invented the light bulb ?': 'Thomas Edison' }]
+let arsc = ['Thermometer', 'Gutter', 'ammeter', 'Ohmmeter', 'aynshtayn', 'Ibn sena', 'Idresse', 'fred', 'Ibn rushd', 'alfarabi', 'blank', 'newton', 'Ibn rushd', 'Alexander Fleming', 'Howard Florey', 'Robert Koch', 'fred', 'Florey', 'Marie Curie', 'Nobel']
 
-   
-    s = Math.floor(Math.random() * (4 - 0) + 0)
-    he.innerText = count + "- " + Object.keys(qu[hh]);
-    arr[s].innerText = Object.values(qu[hh]);
-    ry=hh
-    hh++
-    count++
+const qcult = [{ 'What is the capital of Ethiopia ?': 'Addis Ababa' }, { 'What is the capital of Germany ?': 'Berlin' }
+    , { 'What is the capital of India ?': 'New Delhi' }, { 'What is the capital of Switzerland ?': 'Bern' }, { 'What is the capital of Egypt ?': 'cairo' }]
+let arq = ['qairo', 'amman', 'ryad', 'topa', 'brussia', 'trodo', 'tokyo', 'tunsia', 'new york', 'maqdesho', 'phladelphia', 'mosco', 'tahran', 'aldoha', 'roma', 'khartoom', 'damas', 'berut', 'aleskandryeh', 'rebat']
+
+const qrel = [{ 'To whom the Prophet Hood sent ?': 'add`s' }, { 'To whom the Prophet Saleh sent ?': 'Thamoud' }
+    , { 'To whom the Prophet Ismail sent ?': 'Jurhum' }, { 'To whom the Prophet Shuaib sent ?': 'Madian' }, { 'To whom the Prophet Ibrahim sent ?': 'Iraq' }]
+let arqr = ['bani Israeli', 'madian', 'Jurhum', 'Pharaoh', 'Pharaoh', 'ashab alrss', 'ashab alyka', 'tobba`a', 'add`s', 'eram', 'quraish', 'alroom', 'bani Israeli', 'madian', 'Jurhum', 'Pharaoh', 'Pharaoh', 'ashab alrss', 'ashab alyka', 'tobba`a']
 
 
-    let at = ['meen', 'soso', 'momo', 'yua', 'yo', 'too', 'rt', 'qp', 'kb', 'aa', 'da', 'dd','cc']
-    for (let i = 0; i <= 3; i++) {
-        if (arr[i].innerText !== '') {
+if (x === 'sport') {
+    for (let i = 0; i <= ars.length; i++) {
+        at.push(ars[i])
+    }
 
-        } else {
-            arr[i].innerText = at[i]
-            at.splice(at[i], 1)
-
-        }
+} else if (x === 'scientific') {
+    for (let i = 0; i <= arsc.length; i++) {
+        at.push(arsc[i])
+    }
+} else if (x === 'cultural') {
+    for (let i = 0; i <= arq.length; i++) {
+        at.push(arq[i])
+    }
+} else {
+    for (let i = 0; i <= arqr.length; i++) {
+        at.push(arqr[i])
     }
 }
+
+const question = (object) => {
+
+    if (x === 'sport') {
+        object = qsport
+    } else if (x === 'scientific') {
+        object = qscien
+    } else if (x === 'cultural') {
+        object = qcult
+    } else {
+        object = qrel
+    }
+
+    for (let i = 0; i <= 3; i++) {
+        arr[i].innerHTML = ''
+        arr[i].innerHTML = at[0];
+        at.splice(0, 1)
+
+    }
+    s = Math.floor(Math.random() * (4 - 0) + 0)
+    he.innerText = count + "- " + Object.keys(object[hh]);
+    arr[s].innerText = Object.values(object[hh]);
+    ry = hh
+    hh++
+    count++
+}
+
 const an1 = document.querySelector('.ans1')
 an1.addEventListener('click', () => {
-    answer()
-    an=ans1.h5.innerText;
+    an = document.getElementsByClassName("ans1")[0].innerText;
+    if (cor.innerText === '') {
+        answer()
+    }
 })
 const an2 = document.querySelector('.ans2')
 an2.addEventListener('click', () => {
-    answer()
-    an= document.getElementsByClassName("ans2")[0].innerText=Object.values(qu[hh]);
-
-
+    an = document.getElementsByClassName("ans2")[0].innerText;
+    if (cor.innerText === '') {
+        answer()
+    }
 })
-const an3= document.querySelector('.ans3')
+const an3 = document.querySelector('.ans3')
 an3.addEventListener('click', () => {
-    answer()
-    an=ans3.h5.innerText;
-
+    an = document.getElementsByClassName("ans3")[0].innerText;
+    if (cor.innerText === '') {
+        answer()
+    }
 })
 const an4 = document.querySelector('.ans4')
 an4.addEventListener('click', () => {
-    answer()
-    an=ans4.h5.innerText;
-
+    an = document.getElementsByClassName("ans4")[0].innerText;
+    if (cor.innerText === '') {
+        answer()
+    }
 })
-const answer = () => {
-    console.log(an)
-    console.log(Object.values(qu[ry]))
-if(an!==Object.values(qu[hh])){
-    he.innerText='false'
-}else{
-    he.innerText='true'
+const answer = (object) => {
+    if (x === 'sport') {
+        object = qsport
+    } else if (x === 'scientific') {
+        object = qscien
+    } else if (x === 'cultural') {
+        object = qcult
+    } else {
+        object = qrel
+    }
+    ss = (Object.values(object[ry])).toString()
+    if ((an) !== ss) {
+        cor.innerText = 'your answer is incorrect :('
+    } else {
+        cor.innerText = 'your answer is correct :)'
+        mark++
+    }
 
-}
+    if (count === 6) {
+        marks.innerText = "You got: " + mark + ' /' + (count - 1)
+        enable = false
+    }
 }
 
 
@@ -90,8 +157,10 @@ body.append(ans1)
 body.append(ans2)
 body.append(ans3)
 body.append(ans4)
+body.append(cor)
 body.append(but1)
 body.append(but2)
+body.append(marks)
 
 /*he*/
 he.innerText = "Ready ?"
@@ -128,6 +197,7 @@ but1.style.height = '2rem';
 but2.innerText = "GO TO Main Page"
 but2.style.color = "orange";
 but2.style.height = '2rem';
+
 
 
 
