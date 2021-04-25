@@ -1,7 +1,5 @@
-
 .b2 {
   background-image: url(./biege.jpg);
-  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -19,19 +17,19 @@
   grid-template-columns: repeat(2, 1fr);
   width: 100vw;
   height: 80vh;
-  @media screen and (max-width: 60em) {
-    grid-template-rows: repeat(4, 1fr);
-  }
 }
-#divsc{
-  background-color: blueviolet
+#divsc {
+  background-color: blueviolet;
 }
-#but1{
-background-color:rgb(110, 105, 105);
+#but1 {
+  background-color: rgb(110, 105, 105);
 }
-#but2{
-  background-color:rgb(110, 105, 105);
-  }
+#but2 {
+  background-color: rgb(110, 105, 105);
+}
+#but3 {
+  background-color: rgb(110, 105, 105);
+}
 #divab {
   display: flex;
   margin: auto;
@@ -40,15 +38,18 @@ background-color:rgb(110, 105, 105);
   display: block;
   border-top: solid blueviolet;
   height: 57vh;
-  background-color: rgba(0, 0, 0, 0.267);
+  background-color: rgba(100, 94, 94, 0.267);
 }
-#divqu{
+#divqu {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
-#divans{
+#divans {
   display: grid;
   justify-content: space-between;
+}
+#divso{
+  float:right;
 }
 
 li {
@@ -59,11 +60,15 @@ ul {
 }
 li a {
   display: block;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   color: rgb(33, 96, 212);
   margin-right: 20px;
   text-decoration: none;
+  transition: all 500ms ease;
+}
+a:hover {
+  color: rgb(95, 172, 207);
 }
 #hn {
   font-size: 23px;
@@ -112,7 +117,7 @@ li a {
   font-size: 35px;
   padding-left: 9px;
 }
-#h2q{
+#h2q {
   display: flex;
   margin-bottom: 4px;
   border-radius: 18px 5px;
@@ -122,4 +127,11 @@ li a {
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   padding-left: 14px;
+}
+#mute{
+width: 30px;
+height: 30px;
+}
+#sound{
+  display: none;
 }

@@ -12,6 +12,19 @@ if (enable === true) {
         }
     })
 }
+const btn2 = document.querySelector('#but3')
+btn2.addEventListener('click', () => {
+    window.location.reload();
+})
+const soundm = document.querySelector('#mute')
+soundm.addEventListener('click', () => {
+    if(document.getElementById('sound').muted===true)
+    document.getElementById('sound').muted = false;
+    else{
+        document.getElementById('sound').muted= true
+    }
+
+})
 
 let x = localStorage.getItem("type");
 let mark = 0;
@@ -50,7 +63,7 @@ let arq = ['qairo', 'amman', 'ryad', 'topa', 'brussia', 'trodo', 'tokyo', 'tunsi
 
 const qrel = [{ 'To whom the Prophet Hood sent ?': 'add`s' }, { 'To whom the Prophet Saleh sent ?': 'Thamoud' }
     , { 'To whom the Prophet Ismail sent ?': 'Jurhum' }, { 'To whom the Prophet Shuaib sent ?': 'Madian' }, { 'To whom the Prophet Ibrahim sent ?': 'Iraq' }]
-let arqr = ['bani Israeli', 'madian', 'Jurhum', 'Pharaoh', 'Pharaoh', 'ashab alrss', 'ashab alyka', 'tobba`a', 'add`s', 'eram', 'quraish', 'alroom', 'bani Israeli', 'madian', 'Jurhum', 'Pharaoh', 'Pharaoh', 'ashab alrss', 'ashab alyka', 'tobba`a']
+let arqr = ['bani Israeli', 'madian', 'Jurhum', 'Pharaoh', 'Pharaoh', 'ashab alrss', 'ashab alyka', 'tobba`a', 'add`s', 'eram', 'quraish', 'alroom', 'bani Israeli', 'alroom', 'Jurhum', 'Pharaoh', 'Pharaoh', 'ashab alrss', 'ashab alyka', 'tobba`a']
 
 
 if (x === 'sport') {
@@ -138,14 +151,13 @@ const answer = (object) => {
     }
     ss = (Object.values(object[ry])).toString()
     if ((an) !== ss) {
-        cor.innerText = 'your answer is incorrect :('
+        cor.innerText = 'your answer (' + an + ') is incorrect 😢\n \n The correct answer is (' + ss + ')'
     } else {
-        cor.innerText = 'your answer is correct :)'
+        cor.innerText = 'your answer (' + ss + ') is correct 🎉'
         mark++
     }
-
     if (count === 6) {
-        marks.innerText = "You got: " + mark + ' /' + (count - 1)
+        marks.innerText = "You got: " + mark + ' / ' + (count - 1)
         enable = false
     }
 }
@@ -159,6 +171,7 @@ body.append(ans3)
 body.append(ans4)
 body.append(cor)
 body.append(but1)
+body.append(but3)
 body.append(but2)
 body.append(marks)
 
@@ -197,6 +210,11 @@ but1.style.height = '2rem';
 but2.innerText = "GO TO Main Page"
 but2.style.color = "orange";
 but2.style.height = '2rem';
+
+but3.innerText = "Replay"
+but3.style.color = "orange";
+but3.style.marginRight = '10px';
+but3.style.height = '2rem';
 
 
 
